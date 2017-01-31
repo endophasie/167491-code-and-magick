@@ -5,28 +5,18 @@ window.renderStatistics = function (ctx, names, times) {
   var container = document.querySelector('.demo');
   var message = 'Ура, вы победили!\nСписок результатов:';
 
-  names = ['Вы', 'Енот', 'Кекс', 'Бот'];
-  times = [2048.44, 1174.78, 605.55, 3007];
-  ctx = canvas.getContext('2d');
-
   var drawCloud = function (x, y, fill) {
     ctx.fillStyle = fill;
     ctx.fillRect(x, y, 420, 270);
   };
 
   var drawGraph = function () {
-    var max = -1;
-
-    for (var i = 0; i < times.length; i++) {
-      var time = times[i];
-      if (time > max) {
-        max = time;
-      }
-    }
-
+    var max = function () {
+      return Math.max.apply(null, times).toFixed(0);
+    };
     var histoHeight = 140;
     var histoX = 140;
-    var step = histoHeight / max;
+    var step = histoHeight / max();
     var columnIndent = 90;
 
     for (var i = 0; i < times.length; i++) {
@@ -50,7 +40,6 @@ window.renderStatistics = function (ctx, names, times) {
 
   canvas.width = container.clientWidth;
   canvas.height = container.clientHeight;
-  container.appendChild(canvas).classList.add('result');
 
   drawCloud(110, 20, 'rgba(0, 0, 0, 0.7)');
   drawCloud(100, 10, '#fff');

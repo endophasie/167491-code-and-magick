@@ -1,7 +1,6 @@
 'use strict';
 
 window.renderStatistics = function (ctx, names, times) {
-  var canvas = document.createElement('canvas');
   var container = document.querySelector('.demo');
   var message = 'Ура, вы победили!\nСписок результатов:';
 
@@ -30,16 +29,13 @@ window.renderStatistics = function (ctx, names, times) {
       } else {
         ctx.fillStyle = 'rgba(0,0,' + ((Math.random() * 5) * 50).toFixed(0) + ',1)';
       }
-      ctx.fillRect(histoX + columnIndent * i, canvas.height - height - 60, 40, height);
+      ctx.fillRect(histoX + columnIndent * i, container.clientHeight - height - 60, 40, height);
 
       ctx.fillStyle = '#000';
       ctx.fillText(name, histoX + columnIndent * i, 100 + histoHeight + 20);
-      ctx.fillText(time.toFixed(0), histoX + columnIndent * i, canvas.height - height - 70);
+      ctx.fillText(time.toFixed(0), histoX + columnIndent * i, container.clientHeight - height - 70);
     }
   };
-
-  canvas.width = container.clientWidth;
-  canvas.height = container.clientHeight;
 
   drawCloud(110, 20, 'rgba(0, 0, 0, 0.7)');
   drawCloud(100, 10, '#fff');

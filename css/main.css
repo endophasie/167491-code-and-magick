@@ -74,7 +74,7 @@ header {
   top: 0;
   right: 0;
   left: 0;
-  z-index: 0;
+  z-index: 3;
 
   height: 363px;
 
@@ -139,6 +139,7 @@ header {
   width: 700px;
   height: 300px;
   margin: 0 auto;
+  position: relative;
 }
 
 main {

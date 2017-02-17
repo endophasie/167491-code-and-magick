@@ -36,7 +36,7 @@
 
     <div class="setup-user">
       <img class="setup-user-pic" src="./img/user-1.jpg" />
-      <input type="text" class="setup-user-name" value="Синий Пендальф" />
+      <input type="text" class="setup-user-name" value="Синий Пендальф" maxlength="50" required />
     </div>
 
     <div class="setup-wizard-appearance">
@@ -107,31 +107,7 @@
                                                               width="130">Сделано в HTML Academy</a>в 2017 году</p>
 </footer>
 
-<script>
-
-  var fireballSize = 22;
-  var wizardSpeed = 3;
-  var wizardWidth = 70;
-  var getFireballSpeed = function (left) {
-    if (left) {
-      return 5;
-    } else {
-      return 2;
-    }
-  };
-  var getWizardHeight = function() {
-    return wizardWidth * 1.337;
-  };
-
-  function getWizardX(width) {
-    return (width - wizardWidth) / 2;
-  }
-
-  function getWizardY(height) {
-    return height / 3 * 2 - getWizardHeight() / 2;
-  }
-
-</script>
+<script src="js/setup.js" type="application/javascript"></script>
 <script src="js/stat.js" type="application/javascript"></script>
 <script src="js/game.js" type="application/javascript"></script>
 
